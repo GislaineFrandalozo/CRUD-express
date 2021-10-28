@@ -9,10 +9,11 @@ server.set('view engine', 'ejs')
 server.use(express.static("public"))
 server.set('views', path.join(__dirname, 'views'))
 
-route.get('/', (req, res) => {
+route.get('', (req, res) => {
   res.render('index')
 })
-route.post('/?', insert.create)
+route.post('/add/:teste1/:teste2', insert.create)
+server.use(express.urlencoded({extended: true}))
 server.use(route)
 server.listen(port, () => {
     console.log(`Init server port: ${port}`)
