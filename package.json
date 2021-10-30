@@ -1,7 +1,7 @@
 {
   "name": "crud-express",
   "version": "1.0.0",
-  "description": "My first CRUD in express",
+  "description": "My first CRUD with express",
   "main": "src/server.js",
   "scripts": {
     "start": "nodemon .",

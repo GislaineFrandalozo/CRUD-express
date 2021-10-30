@@ -2,17 +2,18 @@ const express = require('express')
 const server = express()
 const route = express.Router()
 const path = require('path')
-const insert = require('./controllers/insert')
+const controllers = require('./controllers/controllers')
 const port = 3000
 
 server.set('view engine', 'ejs')
 server.use(express.static("public"))
 server.set('views', path.join(__dirname, 'views'))
 
-route.get('', (req, res) => {
+route.get('/', (req, res) => {
   res.render('index')
 })
-route.post('/add/:teste1/:teste2', insert.create)
+route.post('/api/:teste1/:teste2', controllers.create)
+route.get('/api/:teste1', controllers.select)
 server.use(express.urlencoded({extended: true}))
 server.use(route)
 server.listen(port, () => {

@@ -4,23 +4,26 @@
         <meta charset="UTF-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link rel="stylesheet" href="style/index-style.css">
+        <link rel="stylesheet" href="/style/index-style.css">
         <title>Document</title>
     </head>
     <body>
         <h2>Digite alguma coisa para salvar no banco de dados!</h2>
         <form id="form-1" class="design" method="POST">
             <label class="att">Atributo UM (ID) <input id="sendID" class="att" name="attONE" type="number"></label>
-            <label class="att">Atributo DOIS<input id="sendAtt" class="att" name="attTWO" type="text"></label>
+            <label class="att">Atributo DOIS<input id="sendString" class="att" name="attTWO" type="text"></label>
             <button class="send" type="submit">ENVIAR</button>            
         </form>
         <section>
             <h2>Faça uma consulta para alterar ou deletar os dados!</h2>
-            <div class="design">
+            <form id="form-2" method="GET" class="design">
                 <label class="att">ID<input id="searchID" class="att" type="number"></label>
                 <button class="search" >PESQUISAR</button>  
-            </div>
+            </form>
         </section>
+        <div id="res">
+
+        </div>
     </body>
-    <script src="scripts/index-script.js"></script>
+    <script src="/scripts/index-script.js"></script>
     </html>
