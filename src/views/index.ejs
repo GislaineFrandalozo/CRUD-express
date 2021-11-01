@@ -23,7 +23,7 @@
         </form>
     </section>
     <div id="res">
-        <% function res(resObj){ if(resObj===0){ console.log('xxxxxxxxxx') }else{ 
+        <%if(typeof resObj != 'undefined' ){
             resObj.forEach(function(attribute) { %>
             <p>
                ID: <%= attribute.attOne %>
@@ -31,9 +31,9 @@
             <p>
                 Texto: <%= attribute.attTwo %>
             </p>
-            <% })} } res(resObj) %>
             <a id="edit">Editar</a>
             <a id="delete">Excluir</a>
+            <% })}%>
     </div>
 </body>
 <script src="/scripts/index-script.js"></script>
