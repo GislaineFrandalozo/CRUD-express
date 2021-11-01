@@ -10,7 +10,7 @@ server.use(express.static("public"))
 server.set('views', path.join(__dirname, 'views'))
 
 route.get('/', (req, res) => {
-  res.render('index')
+  res.render('index', {resObj: 0})
 })
 route.post('/api/:teste1/:teste2', controllers.create)
 route.get('/api/:teste1', controllers.select)

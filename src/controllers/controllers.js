@@ -27,14 +27,12 @@ module.exports = {
     },
     async select(req, res){
         try{
-            console.log("***********")
             let searchID = req.params.teste1
             const db = await dataBase()
             const resDB = await db.all(`SELECT * FROM testeTable
             WHERE attOne = ${searchID}`)
-            
             await db.close()
-            res.render('index')
+            res.render('index', {resObj: resDB,} )
             console.log(resDB)
             
 
