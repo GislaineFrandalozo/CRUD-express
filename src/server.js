@@ -12,8 +12,11 @@ server.set('views', path.join(__dirname, 'views'))
 route.get('/', (req, res) => {
   res.render('index')
 })
-route.post('/api/:teste1/:teste2', controllers.create)
-route.get('/api/:teste1', controllers.select)
+route.post('/api/post/:teste1/:teste2', controllers.create)
+route.get('/api/get/:teste1', controllers.select)
+route.put('/api/PUT', controllers.edit)
+route.get('/put/:teste1', controllers.renderEdit)
+route.get('/delete/:teste1', controllers.remove)
 server.use(express.urlencoded({extended: true}))
 server.use(route)
 server.listen(port, () => {

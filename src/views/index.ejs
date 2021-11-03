@@ -24,15 +24,18 @@
     </section>
     <div id="res">
         <%if(typeof resObj != 'undefined' ){
-            resObj.forEach(function(attribute) { %>
+            resObj.forEach(function(attribute) { 
+                const editID = `/put/${attribute.attOne}`
+                const deleteID = `/delete/${attribute.attOne}`
+                %>
             <p>
                ID: <%= attribute.attOne %>
             </p>
             <p>
                 Texto: <%= attribute.attTwo %>
             </p>
-            <a id="edit">Editar</a>
-            <a id="delete">Excluir</a>
+            <a href= <%= editID %> id="edit"> Editar</a>
+            <a href= <%= deleteID %> id="delete"> Excluir</a>
             <% })}%>
     </div>
 </body>
