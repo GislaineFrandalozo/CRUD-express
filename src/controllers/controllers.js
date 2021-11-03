@@ -59,13 +59,15 @@ module.exports = {
     },
     async edit(req, res){
         try{
-           /* let id = req.params.teste1
-            let editID = req.query.attONE
-            let editString = req.query.attTWO
+            let id = req.params.teste1
+            let editID = req.body.attONE
+            let editString = req.body.attTWO
+            console.log(editID, editString)
             const db = await dataBase()
             await db.all(`UPDATE testeTable SET attOne= ${editID}, attTwo= '${editString}' WHERE attOne=${id}`)
-            await db.close()*/
+            await db.close()
             res.redirect('/')
+            console.log(editID, editString)
 
 
         }catch(e){

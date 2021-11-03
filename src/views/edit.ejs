@@ -12,6 +12,7 @@
     <div id="res">
         <%if(typeof resObj != 'undefined' ){
             resObj.forEach(function(attribute) { 
+                let url = `http://localhost:3000/api/PUT/${attribute.attOne}`
                 %>
             <p>
                ID: <%= attribute.attOne %>
@@ -20,14 +21,13 @@
                 Texto: <%= attribute.attTwo %>
             </p>
         
-    </div>
-    <form id="form-1" action='http://localhost:3000/api/PUT' class="design" method="PUT">
-        <label class="att">Atributo UM (ID) <input id="sendID" class="att" name="attONE" type="number"></label>
-        <label class="att">Atributo DOIS<input id="sendString" class="att" name="attTWO" type="text"></label>
-        <button class="send" type="submit">ENVIAR</button>
-    </form>
-    <% })}%>
-    <section>
+        </div>
+        <form id="form-1" action=<%= url %> class="design" method="POST">
+            <label class="att">Atributo UM (ID) <input id="sendID" class="att" name="attONE" type="number"></label>
+            <label class="att">Atributo DOIS<input id="sendString" class="att" name="attTWO" type="text"></label>
+            <button class="send" type="submit">ENVIAR</button>
+        </form>
+        <% })}%>
 </body>
 <script src="/scripts/edit-script.js"> </script>
 </html>

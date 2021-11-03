@@ -14,7 +14,7 @@ route.get('/', (req, res) => {
 })
 route.post('/api/post/:teste1/:teste2', controllers.create)
 route.get('/api/get/:teste1', controllers.select)
-route.put('/api/PUT', controllers.edit)
+route.post('/api/PUT/:teste1', controllers.edit)
 route.get('/put/:teste1', controllers.renderEdit)
 route.get('/delete/:teste1', controllers.remove)
 server.use(express.urlencoded({extended: true}))
