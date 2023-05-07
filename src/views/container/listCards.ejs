@@ -1,14 +1,8 @@
 <div class="row row-cols-1 row-cols-md-3 row-cols-lg-4 mb-5">
-    <%- include('../components/card'); %>
-    <%- include('../components/card'); %>
-    <%- include('../components/card'); %>
-    <%- include('../components/card'); %>
-    <%- include('../components/card'); %>
-    <%- include('../components/card'); %>
-    <%- include('../components/card'); %>
-    <%- include('../components/card'); %>
-    <%- include('../components/card'); %>
-    <%- include('../components/card'); %>
-    <%- include('../components/card'); %>
-    <%- include('../components/card'); %>
+    <% 
+        notes.forEach((note) => {
+            %> <%- include('../components/card', {note: note}); %><%
+        })
+    %>
+   
 </div>

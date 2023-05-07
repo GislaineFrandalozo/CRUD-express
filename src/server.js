@@ -29,7 +29,7 @@ route.get('/notes', notesControllers.index);
 route.get('/notes/create', notesControllers.create);
 route.post('/notes', notesControllers.store);
 route.get('/notes/:id', notesControllers.show);
-route.get('/notes/:id', notesControllers.edit);
+route.get('/notes/:id/edit', notesControllers.edit);
 route.put('/notes/:id', notesControllers.update);
 route.delete('/notes/:id', notesControllers.destroy);
 
