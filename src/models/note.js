@@ -1,9 +1,24 @@
-class Note {
+const dataBase = require("../DB/config")
+
+module.exports = {
+    async all() {
     
-    static get($column) {
+        const db = await dataBase();
+        const resDB = await db.all(`
+            SELECT * FROM notes
+        `);
+        await db.close();
 
-    }
-    static set() {
+        return resDB;
+   },
 
-    }
+   async where(column, value){
+        const db = await dataBase();
+        const resDB = await db.all(`
+            SELECT * FROM notes
+            WHERE ${column} = ${value}
+        `);
+        await db.close();
+        return resDB;
+   },
 }

@@ -1,29 +1,14 @@
-const dataBase = require("../DB/config")
+const dataBase = require("../DB/config");
+const note = require("../models/note");
+
 module.exports = {
 
     async index(req, res) {
         try {
-
-
+            const notes = await note.all();
 
             res.render('index', {
-                 notes: [
-                    {
-                        "id": 1,
-                        "title": "Teste",
-                        "body": "Teste crud express with ejs and bootstrap."
-                    },
-                    {
-                        "id": 2,
-                        "title": "Teste",
-                        "body": "Teste crud express with ejs and bootstrap."
-                    },
-                    {
-                        "id": 3,
-                        "title": "Teste",
-                        "body": "Teste crud express with ejs and bootstrap."
-                    },
-                 ]
+                 notes,
             });
         } catch (e) {
             console.log(e)
@@ -43,7 +28,17 @@ module.exports = {
 
 
     async show(req, res) {
-        res.render('show_note');
+        
+        try {
+            const note_id = req.params.id;
+            const notes = await note.where("id", note_id);
+            const current_note = notes[0];
+         
+            res.render('show_note', {current_note});
+        } catch (e) {
+            console.log(e)
+            res.status(500).json({ e })
+        }
     },
 
 

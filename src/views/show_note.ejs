@@ -13,7 +13,26 @@
 
     <main class="fs-6 text-warning px-5 py-5 pb-3">
 
-        
+        <div class="mb-5">
+            <div class="card bg-dark text-white text-center">
+                <div class="card-header">
+                    <%=current_note.title %>
+                </div>
+                <div class="card-body body-dark" style="min-block-size: 23em;">
+                    <p class="card-text">
+                        <%=current_note.body %>
+                    </p>
+                </div>
+                <div class="card-footer text-body-secondary d-flex flex-row-reverse">
+                    <a href="/notes">
+                        <button type="button" class="btn btn-light">
+                            Voltar
+                        </button>
+                    </a>    
+                </div>
+            </div>
+        </div>
+
     </main>
 
     <footer class="text-warning px-5 py-2 fixed-bottom bg-dark">

@@ -1,6 +1,7 @@
 <% 
-    const url_edit = "/notes/" + note.id + "/edit";
-    const url_delete = "/notes/" + note.id;
+    const url_show = "/notes/" + note.id;
+    const url_edit = url_show + "/edit";
+    const url_delete = url_show;
     const title = note.title;
     const text_body = note.body;
 %>
@@ -17,7 +18,9 @@
         </div>
         <div class="card-footer text-body-secondary hstack gap-3">
             <div class="px-1">
-                <i class="bi bi-arrows-fullscreen icon-warning px-1"></i>
+                <a href= <%=url_show %> >
+                    <i class="bi bi-arrows-fullscreen icon-warning px-1"></i>
+                </a>
             </div>
             <div class="px-1 ms-auto">
                 <a href= <%=url_edit %> >
