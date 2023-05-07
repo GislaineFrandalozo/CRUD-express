@@ -1,12 +1,13 @@
 const dataBase = require('./config')
 const initDB = {
-    async init(){
-        const db = await dataBase()
-        await db.exec(`CREATE TABLE testeTable (
-            attOne INTEGER PRIMARY KEY,
-            attTwo TEXT
+    async init() {
+        const db = await dataBase();
+        await db.exec(`CREATE TABLE notes (
+            id INTEGER PRIMARY KEY AUTOINCREMENT,
+            title TEXT NOT NULL,
+            body TEXT NOT NULL
             )`)
-        await db.close()
+        await db.close();
     }
 }
 initDB.init();

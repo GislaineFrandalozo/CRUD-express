@@ -3,6 +3,6 @@ const { open } = require('sqlite')
 
 module.exports = () =>
 open({
-    filename: './src/DB/CRUD-express.sqlite',
+    filename: './src/DB/crud-express.sqlite',
     driver: sqlite3.Database,
 });
