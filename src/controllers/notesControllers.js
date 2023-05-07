@@ -23,7 +23,17 @@ module.exports = {
 
 
     async store(req, res) {
-        console.log(req);
+        try {
+            const new_data = req.body;
+
+            await note.create(new_data);
+
+            res.status(200).json({new_data});
+
+        } catch (e) {
+            console.log(e)
+            res.status(500).json({ e })
+        }
     },
 
 

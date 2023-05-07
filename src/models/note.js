@@ -2,7 +2,7 @@ const dataBase = require("../DB/config")
 
 module.exports = {
     async all() {
-    
+
         const db = await dataBase();
         const resDB = await db.all(`
             SELECT * FROM notes
@@ -10,9 +10,23 @@ module.exports = {
         await db.close();
 
         return resDB;
-   },
+    },
 
-   async where(column, value){
+    async create(data) {
+        const db = await dataBase();
+        const resDB = await db.all(`
+        INSERT INTO notes(title,body)
+        VALUES(
+             '${data.title}',
+             '${data.body}'
+        )
+    `);
+        await db.close();
+
+        return resDB;
+    },
+
+   async where(column, value) {
         const db = await dataBase();
         const resDB = await db.all(`
             SELECT * FROM notes
@@ -20,9 +34,9 @@ module.exports = {
         `);
         await db.close();
         return resDB;
-   },
+    },
 
-   async update(data){
+    async update(data) {
         const db = await dataBase();
         const resDB = await db.all(`
             UPDATE notes
@@ -31,5 +45,5 @@ module.exports = {
         `);
         await db.close();
         return resDB;
-   },
+    },
 }

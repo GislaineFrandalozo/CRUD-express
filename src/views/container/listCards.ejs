@@ -1,4 +1,7 @@
-<div class="row row-cols-1 row-cols-md-3 row-cols-lg-4 mb-5">
+<div class="d-flex justify-content-end px-4 pb-1 pb-md-2">
+    <%-include('../components/create_note_btn');%>
+ </div>
+<div class="row row-cols-1 row-cols-md-3 row-cols-lg-4 px-3 px-md-4 mb-5">
     <% 
         notes.forEach((note) => {
             %> <%- include('../components/card', {note: note}); %><%

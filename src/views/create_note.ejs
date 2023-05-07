@@ -11,10 +11,41 @@
         <%- include('./_partials/header'); %>
     </header>
 
-    <main class="fs-6 text-warning px-5 py-5 pb-3">
+    <main class="fs-6 text-warning pb-3">
+        <form >
+            <div class="d-flex justify-content-end px-4 pb-3">
+                <button id="create-note" data-url_create="/notes" class="btn btn-sm btn-warning">
+                    Criar
+                </button>
+                <div class="vr mx-2"></div>
+                <a href="/notes">
+                    <button type="button" class="btn btn-sm btn-light">
+                        Home
+                    </button>
+                </a>
+            </div>
+            <div class="mb-5 body-dark text-white p-1 px-md-5">
+                <div class="mb-2">
+                    <label for="exampleFormControlInput1" class="form-label p-2">
+                        Titulo
+                    </label>
+                    <input type="text" class="form-control bg-dark text-white" id="title" required
+                        placeholder="Digite um título...">
+                </div>
+                <div class="mb-2">
+                    <label for="exampleFormControlTextarea1" class="form-label p-2">
+                        Texto
+                    </label>
+                    <textarea class="form-control bg-dark text-white" id="body"
+                        style="min-block-size: 23em;" required placeholder="Digite sua anotação aqui..."></textarea>
+                </div>
+            </div>
+        </form>
 
-        
+
+
     </main>
+
 
     <footer class="text-warning px-5 py-2 fixed-bottom bg-dark">
         <%- include('./_partials/footer'); %>
@@ -22,4 +53,5 @@
 
 </body>
 <script src="/scripts/common-script.js"></script>
+<script src="/scripts/create_note.js"></script>
 </html>
