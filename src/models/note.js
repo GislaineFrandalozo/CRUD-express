@@ -21,4 +21,15 @@ module.exports = {
         await db.close();
         return resDB;
    },
+
+   async update(data){
+        const db = await dataBase();
+        const resDB = await db.all(`
+            UPDATE notes
+            SET title= '${data.title}', body= '${data.body}'
+            WHERE id= ${data.id}
+        `);
+        await db.close();
+        return resDB;
+   },
 }

@@ -43,12 +43,35 @@ module.exports = {
 
 
     async edit(req, res) {
-        res.render('edit_note');
+
+       
+        try {
+            const note_id = req.params.id;
+            const notes = await note.where("id", note_id);
+            const current_note = notes[0];
+         
+            res.render('edit_note', {current_note});
+        } catch (e) {
+            console.log(e)
+            res.status(500).json({ e })
+        }
     },
 
 
     async update(req, res) {
-        console.log(req);
+        try {
+            const note_id = req.params.id;
+            const new_data = req.body;
+
+            new_data['id'] = note_id;
+            await note.update(new_data);
+
+            res.status(200).json({new_data});
+
+        } catch (e) {
+            console.log(e)
+            res.status(500).json({ e })
+        }
     },
 
 

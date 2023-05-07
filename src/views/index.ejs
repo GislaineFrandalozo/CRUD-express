@@ -5,13 +5,13 @@
     <%- include('./_partials/head'); %>
 </head>
 
-<body class="bg-dark">
+<body class="container-fuild bg-dark font-monospace">
 
-    <header class="container-fuild text-warning bg-dark font-monospace">
+    <header class=" text-warning bg-dark  ">
         <%- include('./_partials/header'); %>
     </header>
 
-    <main class="fs-6 text-warning px-5 py-5 pb-3 font-monospace">
+    <main class="fs-6 text-warning px-5 pb-3  ">
         <%
             if(notes.length > 0){
             %><%-include('./container/listCards');%><%
@@ -23,7 +23,7 @@
         
     </main>
 
-    <footer class="text-warning px-5 py-2 fixed-bottom bg-dark font-monospace">
+    <footer class="text-warning px-5 py-2 fixed-bottom bg-dark  ">
         <%- include('./_partials/footer'); %>
     </footer>
    

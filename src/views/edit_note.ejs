@@ -5,15 +5,45 @@
     <%- include('./_partials/head'); %>
 </head>
 
-<body class="bg-dark">
+<body class="container-fuild font-monospace bg-dark">
 
-    <header class="container-fuild text-warning bg-dark">
+    <header class="text-warning bg-dark">
         <%- include('./_partials/header'); %>
     </header>
+    <% const url_update = "/notes/" + current_note.id;  %>
+    <main class="fs-6 text-warning pb-3">
+        <form >
+            <div class="d-flex justify-content-end px-4 pb-3">
+                <button id="update-note" data-url_update=" <%=url_update %> " class="btn btn-warning">
+                    Atualizar
+                </button>
+                <div class="vr mx-2"></div>
+                <a href="/notes">
+                    <button type="button" class="btn btn-light">
+                        Home
+                    </button>
+                </a>
+            </div>
+            <div class="mb-5 body-dark text-white p-1 px-md-5">
+                <div class="mb-2">
+                    <label for="exampleFormControlInput1" class="form-label p-2">
+                        Titulo
+                    </label>
+                    <input type="text" class="form-control bg-dark text-white" id="title" required
+                        placeholder=" <%= current_note.title %> " value="<%=current_note.title %>">
+                </div>
+                <div class="mb-2">
+                    <label for="exampleFormControlTextarea1" class="form-label p-2">
+                        Texto
+                    </label>
+                    <textarea class="form-control bg-dark text-white" id="body"
+                        style="min-block-size: 23em;" required><%=current_note.body %></textarea>
+                </div>
+            </div>
+        </form>
 
-    <main class="fs-6 text-warning px-5 py-5 pb-3">
 
-        
+
     </main>
 
     <footer class="text-warning px-5 py-2 fixed-bottom bg-dark">
@@ -22,4 +52,5 @@
 
 </body>
 <script src="/scripts/common-script.js"></script>
+
 </html>

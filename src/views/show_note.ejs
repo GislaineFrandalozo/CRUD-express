@@ -5,14 +5,26 @@
     <%- include('./_partials/head'); %>
 </head>
 
-<body class="bg-dark">
+<body class="container-fuild bg-dark font-monospace">
 
-    <header class="container-fuild text-warning bg-dark">
+    <header class="text-warning bg-dark">
         <%- include('./_partials/header'); %>
     </header>
-
-    <main class="fs-6 text-warning px-5 py-5 pb-3">
-
+    <% const url_update = "/notes/" + current_note.id + "/edit";  %>
+    <main class="fs-6 text-warning px-2 px-md-5 pb-3">
+        <div class="d-flex justify-content-end px-4 pb-3">
+            <a href=" <%=url_update %> ">
+                <button class="btn btn-warning">
+                    Editar
+                </button>
+            </a>
+            <div class="vr mx-2"></div>
+            <a href="/notes">
+                <button type="button" class="btn btn-light">
+                    Home
+                </button>
+            </a>
+        </div>
         <div class="mb-5">
             <div class="card bg-dark text-white text-center">
                 <div class="card-header">
@@ -24,11 +36,7 @@
                     </p>
                 </div>
                 <div class="card-footer text-body-secondary d-flex flex-row-reverse">
-                    <a href="/notes">
-                        <button type="button" class="btn btn-light">
-                            Voltar
-                        </button>
-                    </a>    
+                   
                 </div>
             </div>
         </div>
