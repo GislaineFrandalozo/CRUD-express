@@ -86,7 +86,19 @@ module.exports = {
 
 
     async destroy(req, res) {
-        console.log(req);
+        console.log("req");
+
+        try {
+            const note_id = req.params.id;
+            
+            await note.delete(note_id);
+
+           res.status(200).json({'message': 'note deleted'});
+
+        } catch (e) {
+            console.log(e)
+            res.status(500).json({ e })
+        }
     },
 
 }

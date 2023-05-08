@@ -28,6 +28,8 @@ function update_note(event) {
         body: JSON.stringify(up_data)
     })
         .then(response => response.json())
-        .then(data => console.log(data))
+        .then(data => {
+            window.location = '/notes';
+        })
         .catch(error => console.error(error));
 }

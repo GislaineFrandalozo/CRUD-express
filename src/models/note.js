@@ -46,4 +46,15 @@ module.exports = {
         await db.close();
         return resDB;
     },
+
+    
+    async delete(id) {
+        const db = await dataBase();
+        const resDB = await db.all(`
+            DELETE FROM notes
+            WHERE id= ${id}
+        `);
+        await db.close();
+        return resDB;
+    },
 }

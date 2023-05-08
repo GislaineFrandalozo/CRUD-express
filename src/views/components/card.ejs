@@ -1,38 +1,36 @@
-<% 
-    const url_show = "/notes/" + note.id;
-    const url_edit = url_show + "/edit";
-    const url_delete = url_show;
-    const title = note.title;
-    const text_body = note.body;
-%>
-
-<div class="mt-3 ">
-    <div class="card bg-dark text-white text-center">
-        <div class="card-header">
-            <%=title%>
-        </div>
-        <div class="card-body body-dark">
-            <p class="card-text text-truncate">
-                <%=text_body %>
-            </p>
-        </div>
-        <div class="card-footer text-body-secondary hstack gap-3">
-            <div class="px-1">
-                <a href= <%=url_show %> >
-                    <i class="bi bi-arrows-fullscreen icon-warning px-1"></i>
-                </a>
+<% const url_show="/notes/" + note.id; const url_edit=url_show + "/edit" ; const url_delete=url_show; const
+    title=note.title; const text_body=note.body; %>
+   
+    <div class="mt-3 ">
+        <%- include('./modal_delete'); %>
+        <div class="card bg-dark text-white text-center">
+            <div class="card-header">
+                <%=title%>
             </div>
-            <div class="px-1 ms-auto">
-                <a href= <%=url_edit %> >
-                    <i class="bi bi-pen-fill icon-warning"></i>
-                </a>
+            <div class="card-body body-dark">
+                <p class="card-text text-truncate">
+                    <%=text_body %>
+                </p>
             </div>
-            <div class="vr"></div>
-            <div class="px-1">
-                <a href= <%=url_delete %> >
-                <i class="bi bi-x-square icon-warning px-1" ></i>
-                </a>
+            <div class="card-footer text-body-secondary hstack gap-3">
+                <div class="px-1">
+                    <a href=<%=url_show %> >
+                        <i class="bi bi-arrows-fullscreen icon-warning px-1"></i>
+                    </a>
+                </div>
+                <div class="px-1 ms-auto">
+                    <a href=<%=url_edit %> >
+                        <i class="bi bi-pen-fill icon-warning"></i>
+                    </a>
+                </div>
+                <div class="vr"></div>
+                <!-- Button trigger modal -->
+                <div class="px-1" data-bs-toggle="modal" 
+                    data-bs-target="#exampleModal"  >
+                    <i class="bi bi-trash icon-warning px-1" data-id="<%= note.id %>" ></i>
+                    </a>
+                </div>
             </div>
         </div>
+       
     </div>
-</div>
