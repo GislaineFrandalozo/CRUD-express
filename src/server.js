@@ -2,7 +2,6 @@ const express = require('express');
 const server = express();
 const route = express.Router();
 const path = require('path');
-const controllers = require('./controllers/controllers');
 const notesControllers = require('./controllers/notesControllers');
 const port = 3000
 
